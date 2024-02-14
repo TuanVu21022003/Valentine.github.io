@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Valentine's Day</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        h1 {
+            font-size: 3em; /* Kích thước font */
+            color: white; /* Màu chữ */
+            text-shadow: /* Tạo hiệu ứng stroke */
+                -1px -1px 0 #f52895,  
+                 1px -1px 0 #ef1127,
+                -1px  1px 0 #000,
+                 1px  1px 0 #000; 
+            padding: 10px; /* Thêm padding để tạo khoảng trống giữa nội dung và stroke */
+            /* display: inline-block; Cho phép stroke được bao quanh nội dung */
+        }
+
+        p {
+            font-size: 1.5em; /* Kích thước font */
+            color: white; /* Màu chữ */
+            text-shadow: /* Tạo hiệu ứng stroke */
+                -1px -1px 0 #000,  
+                 1px -1px 0 #000,
+                -1px  1px 0 #000,
+                 1px  1px 0 #000; 
+            padding: 10px; /* Thêm padding để tạo khoảng trống giữa nội dung và stroke */
+            /* display: inline-block; Cho phép stroke được bao quanh nội dung */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Happy Valentine's Day!</h1>
+        <p>You make my heart happy every day!</p>
+        <div class="letter" onclick="showVideo()">
+            <img src="image/buc thu.png" alt="Letter">
+        </div>
+        <div id="videoModal" class="modal">
+            <span class="close" onclick="closeVideo()">&times;</span>
+            <video class="modal-content" id="modalVideo" controls>
+                <source src="video/5159212012533.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+    </div>
+
+    <script>
+        function showVideo() {
+            var letter = document.querySelector('.letter');
+            var videoModal = document.getElementById('videoModal');
+            letter.style.display = "none"; // Ẩn bức thư
+            videoModal.style.display = "block"; // Hiện video
+        }
+
+        function closeVideo() {
+            var letter = document.querySelector('.letter');
+            var videoModal = document.getElementById('videoModal');
+            var video = document.getElementById('modalVideo');
+
+            letter.style.display = "inline-block"; // Hiện lại bức thư
+            videoModal.style.display = "none"; // Ẩn video
+            video.pause(); // Dừng video
+        }
+    </script>
+</body>
+</html>
